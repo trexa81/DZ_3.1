@@ -9,9 +9,11 @@ namespace DZ_3._1
             // DZ2.1
             // BankAccount AccountNumber, Balance, BankAccountType
             var bankAccount = new BankAccount(1234, 34, BankAccountType.Credit);
-            var balance = bankAccount.Balance;
+            var accountNumber = bankAccount.AccountNumber;
             Random rng = new();
-            bankAccount.Balance += rng.Next(1, 1000);
+            bankAccount.Balance += rng.NextDouble() * 100;
+            var balance = bankAccount.Balance;
+            Console.WriteLine(accountNumber);
             Console.WriteLine(balance);
             Console.WriteLine(bankAccount.Balance);
             Console.WriteLine(BankAccountType.Credit);

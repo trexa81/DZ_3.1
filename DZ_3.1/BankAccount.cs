@@ -24,7 +24,7 @@ namespace DZ_3._1
             get
             {
                 Random rng = new Random();
-                return rng.Next(1, 1000);
+                return rng.Next(1000, 1000000);
             }
             //set
             //{
