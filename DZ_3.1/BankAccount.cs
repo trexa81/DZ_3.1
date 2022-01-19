@@ -10,28 +10,35 @@ namespace DZ_3._1
     {
         private long _AccountNumber;
         private double _Balance;
-        private BankAccountType _BankAccountType;
+        public BankAccountType _BankAccountType;
 
-        public enum BankAccountType
-        {
-            Credit,
-            Debit
-        }
-        public double Balance
-        {
-            get
-            {
-                return Random.Double.Next
-            }
-        }
-
-        public BankAccount(long AccountNumber, double Balance, string BankAccountType)
+        public BankAccount(long AccountNumber, double Balance, BankAccountType BankAccountType)
         {
             _AccountNumber = AccountNumber;
             _Balance = Balance;
             _BankAccountType = BankAccountType;
         }
+       
+        public double Balance
+        {
+            get
+            {
+                Random rng = new Random();
+                //return _Balance;
+                return rng.Next(1, 1000);
+            }
+            set
+            {
+                _Balance = value;
+            }
+        }
+
+       
+    }
+    public enum BankAccountType
+    {
+        Credit,
+        Debit
     }
 
-    
 }

@@ -8,17 +8,12 @@ namespace DZ_3._1
         {
             // DZ2.1
             // BankAccount AccountNumber, Balance, BankAccountType
-            var bankAccount = new BankAccount();
+            var bankAccount = new BankAccount(1234, 34, BankAccountType.Credit);
+            var balance = bankAccount.Balance;
+            bankAccount.Balance += 50;
+            Console.WriteLine(balance);
+            Console.WriteLine(bankAccount.Balance);
+            Console.WriteLine(BankAccountType.Credit);
         }
     }
 }
-
-
-
-/* public enum Type {
-Credit,
-            Debit
-        }
-        private int _id;
-private double _balance;
-private Type _type;*/
