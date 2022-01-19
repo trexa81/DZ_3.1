@@ -18,14 +18,27 @@ namespace DZ_3._1
             _Balance = Balance;
             _BankAccountType = BankAccountType;
         }
-       
-        public double Balance
+
+        public long AccountNumber
         {
             get
             {
                 Random rng = new Random();
-                //return _Balance;
                 return rng.Next(1, 1000);
+            }
+            //set
+            //{
+            //    _Balance = value;
+            //}
+        }
+
+
+        public double Balance
+        {
+            get
+            {
+                return _Balance;
+               
             }
             set
             {
