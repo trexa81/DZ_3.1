@@ -8,15 +8,20 @@ namespace DZ_3._1
         {
             // DZ2.1
             // BankAccount AccountNumber, Balance, BankAccountType
-            var bankAccount = new BankAccount(1234, 34, BankAccountType.Credit);
-            var accountNumber = bankAccount.AccountNumber;
+            var bankAccountCredit = new BankAccount(1234, 34, BankAccountType.Credit);
+            var accountNumber = bankAccountCredit.AccountNumber;
             Random rng = new();
-            bankAccount.Balance += rng.NextDouble() * 100;
-            var balance = bankAccount.Balance;
+            bankAccountCredit.Balance += rng.NextDouble() * 100;
+            var balanceCredit = bankAccountCredit.Balance;
             Console.WriteLine(accountNumber);
-            Console.WriteLine(balance);
-            Console.WriteLine(bankAccount.Balance);
+            Console.WriteLine(balanceCredit);
             Console.WriteLine(BankAccountType.Credit);
+            var bankAccountDebit = new BankAccount(1234, 34, BankAccountType.Debit);
+            var balanceDebit = bankAccountCredit.Balance + bankAccountCredit.Balance;
+            bankAccountCredit.Balance -= bankAccountCredit.Balance;
+            Console.WriteLine(accountNumber);
+            Console.WriteLine(balanceCredit);
+            Console.WriteLine(balanceDebit);
         }
     }
 }

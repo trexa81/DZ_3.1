@@ -12,11 +12,11 @@ namespace DZ_3._1
         private double _Balance;
         public BankAccountType _BankAccountType;
 
-        public BankAccount(long AccountNumber, double Balance, BankAccountType BankAccountType)
+        public BankAccount(long AccountNumber, double Balance, BankAccountType EnumType)
         {
             _AccountNumber = AccountNumber;
             _Balance = Balance;
-            _BankAccountType = BankAccountType;
+            _BankAccountType = EnumType;
         }
 
         public long AccountNumber
