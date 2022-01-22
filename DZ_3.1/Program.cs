@@ -24,12 +24,14 @@ namespace DZ_3._1
             Console.WriteLine(balanceCredit);
             Console.WriteLine(balanceDebit);
             Console.WriteLine(accountNumberDebit);
+            Reverse();
             Reverse(Console.ReadLine());
         }
 
-        public static void Reverse(string strings = "Hello!")
+        static void Reverse(string  strings = "Hello!")
         {
-            //strings = "Hello!";
+            Console.WriteLine(strings);
+            //strings  = "Hello!";
             var x = strings.ToCharArray(); //стринг в чар
             var n = x.Length;        // длина массива
             var k = n / 2;          // середина массива
@@ -40,10 +42,14 @@ namespace DZ_3._1
                 x[i] = x[n - i - 1];
                 x[n - i - 1] = temp;
             }
+            
             foreach (var i in x)
             {
                 Console.Write($"{i}");
             }
+            Console.WriteLine();
+            string txt = new(x);
+            Console.WriteLine(txt);
 
         }
     }
