@@ -24,6 +24,27 @@ namespace DZ_3._1
             Console.WriteLine(balanceCredit);
             Console.WriteLine(balanceDebit);
             Console.WriteLine(accountNumberDebit);
+            Reverse(Console.ReadLine());
+        }
+
+        public static void Reverse(string strings)
+        {
+            strings = "Hello!";
+            var x = strings.ToCharArray(); //стринг в чар
+            var n = x.Length;        // длина массива
+            var k = n / 2;          // середина массива
+            char temp;               // вспомогательный элемент для обмена значениями
+            for (var i = 0; i < k; i++)
+            {
+                temp = x[i];
+                x[i] = x[n - i - 1];
+                x[n - i - 1] = temp;
+            }
+            foreach (var i in x)
+            {
+                Console.Write($"{i}");
+            }
+
         }
     }
 }
