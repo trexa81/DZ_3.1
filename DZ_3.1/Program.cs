@@ -27,9 +27,9 @@ namespace DZ_3._1
             Reverse(Console.ReadLine());
         }
 
-        public static void Reverse(string strings)
+        public static void Reverse(string strings = "Hello!")
         {
-            strings = "Hello!";
+            //strings = "Hello!";
             var x = strings.ToCharArray(); //стринг в чар
             var n = x.Length;        // длина массива
             var k = n / 2;          // середина массива
