@@ -28,7 +28,7 @@ namespace DZ_3._1
             Reverse(Console.ReadLine());
         }
 
-        static void Reverse(string  strings = "Hello!")
+        static string Reverse(string  strings = "Hello!")
         {
             Console.WriteLine(strings);
             //strings  = "Hello!";
@@ -50,7 +50,7 @@ namespace DZ_3._1
             Console.WriteLine();
             string txt = new(x);
             Console.WriteLine(txt);
-
+            return txt;
         }
     }
 }
