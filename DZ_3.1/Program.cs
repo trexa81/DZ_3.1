@@ -6,7 +6,19 @@ namespace DZ_3._1
     {
         static void Main(string[] args)
         {
-            
+            House[] houses = new House[]
+           {
+                new House(3, 5, 4, 1000),
+                new House(4, 9, 5, 2000),
+                new House(5, 3, 2, 700),
+                new House(1, 2, 3, 500),
+                new House(6, 9, 5, 2500),
+           };
+
+            foreach (House house in houses)
+                Console.WriteLine(house.ToString());
+            Console.ReadKey();
+
         }
 
         class House
