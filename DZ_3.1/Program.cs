@@ -41,7 +41,7 @@ namespace DZ_3._1
             /// <summary>
             /// квартир на этаже
             /// </summary>
-            private int _roomsOnFloor;
+            private int _roomsOnHouse;
             private int _numberHouse;
             
             //Конструкторы
@@ -49,7 +49,7 @@ namespace DZ_3._1
             {
                 _porchCount = porchCount;
                 _floorCount = floorCount;
-                _roomsOnFloor = roomsOnFloor;
+                _roomsOnHouse = roomsOnFloor;
                 _numberHouse = numberHouse;
             }
 
@@ -74,10 +74,10 @@ namespace DZ_3._1
             /// <summary>
             /// квартир в доме
             /// </summary>
-            public int RoomsOnFloor
+            public int RoomsOnHouse
             {
                 get { return GetRoomsCountInHouse(); }
-                set { _roomsOnFloor = value; }
+                set { _roomsOnHouse = value; }
             }
 
             public int HouseNumber
@@ -95,7 +95,7 @@ namespace DZ_3._1
             /// <returns></returns>
             public int GetRoomsCountInPorch()
             {
-                return _roomsOnFloor * _floorCount;
+                return _roomsOnHouse * _floorCount;
             }
 
             /// <summary>
@@ -120,7 +120,7 @@ namespace DZ_3._1
             public override string ToString()
             {
                 return string.Format("Номер здания: {2} \n Количество этажей: {0} \n Количество подъездов: {1} \n Количество квартир: {3}\n",
-                    Floors, Porchs, HouseNumber, RoomsOnFloor);
+                    Floors, Porchs, HouseNumber, RoomsOnHouse);
             }
         }
     }
