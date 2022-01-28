@@ -24,34 +24,42 @@ namespace DZ_3._1
         class House
         {
             //Поля
-            public int porchCount;
-            public int floorCount;
+            private int porchCount;
+            private int floorCount;
             private int roomsOnFloor;
-            private double meterCost;
+            private double numberHouse;
 
             //Свойства
+
+            /// <summary>
+            /// подъезд
+            /// </summary>
             public int Porchs
             {
                 get { return porchCount; }
                 set { porchCount = value; }
             }
-
+            /// <summary>
+            /// этажей
+            /// </summary>
             public int Floors
             {
                 get { return floorCount; }
                 set { floorCount = value; }
             }
-
+            /// <summary>
+            /// комнат на этаже
+            /// </summary>
             public int RoomsOnFloor
             {
                 get { return roomsOnFloor; }
                 set { roomsOnFloor = value; }
             }
 
-            public double Cost
+            public double Number
             {
-                get { return meterCost; }
-                set { meterCost = value; }
+                get { return numberHouse; }
+                set { numberHouse = value; }
             }
 
             //Конструкторы
@@ -64,7 +72,7 @@ namespace DZ_3._1
                 this.porchCount = porchCount;
                 this.floorCount = floorCount;
                 this.roomsOnFloor = roomsOnFloor;
-                this.meterCost = cost;
+                this.numberHouse = cost;
             }
             //Методы
 
@@ -80,12 +88,13 @@ namespace DZ_3._1
 
             public double HouseCost()
             {
-                return (double)GetRoomsCountInHouse() * Cost;
+                return (double)GetRoomsCountInHouse() * Number;
             }
 
+            // уникальный номер здания, высота, этажность, количество квартир, подъездов
             public override string ToString()
             {
-                return string.Format("Номер здания: {2} \n Количество этажей: {0} \n Количество подъездов: {1} \n {3}", Floors, Porchs, Cost, RoomsOnFloor);/**/
+                return string.Format("Номер здания: {2} \n Количество этажей: {0} \n Количество подъездов: {1} \n Количество квартир: {3}\n", Floors, Porchs, Number, RoomsOnFloor);/**/
             }
         }
     }
