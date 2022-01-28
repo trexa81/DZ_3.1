@@ -7,19 +7,21 @@ namespace DZ_3._1
         static void Main(string[] args)
         {
             int number = 1;
-            int numberHouse = number++;
+            int numberHouse = number;
             House[] houses = new House[]
            {
                
-                new House(3, 5, 4, numberHouse/*, 1000*/),
-                new House(4, 9, 5, numberHouse/*, 2000*/),
-                new House(5, 3, 2, numberHouse/*, 700*/),
-                new House(1, 2, 3, numberHouse/*, 500*/),
-                new House(6, 9, 5, numberHouse/*, 2500*/),
+                new House(3, 5, 4, numberHouse++/*, 1000*/),
+                new House(4, 9, 5, numberHouse++/*, 2000*/),
+                new House(5, 3, 2, numberHouse++/*, 700*/),
+                new House(1, 2, 3, numberHouse++/*, 500*/),
+                new House(6, 9, 5, numberHouse++/*, 2500*/),
            };
 
             foreach (House house in houses)
+
                 Console.WriteLine(house.ToString());
+
             Console.ReadKey();
 
         }
@@ -40,7 +42,7 @@ namespace DZ_3._1
             /// квартир на этаже
             /// </summary>
             private int _roomsOnFloor;
-            private int _numberHouse = 1;
+            private int _numberHouse;
             
             //Конструкторы
             public House(int porchCount, int floorCount, int roomsOnFloor, int numberHouse)
@@ -48,7 +50,7 @@ namespace DZ_3._1
                 _porchCount = porchCount;
                 _floorCount = floorCount;
                 _roomsOnFloor = roomsOnFloor;
-                //_numberHouse = numberHouse;
+                _numberHouse = numberHouse;
             }
 
             //Свойства
