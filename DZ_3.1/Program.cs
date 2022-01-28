@@ -29,44 +29,6 @@ namespace DZ_3._1
             private int _roomsOnFloor;
             private double _numberHouse;
 
-            //Свойства
-
-            /// <summary>
-            /// подъезд
-            /// </summary>
-            public int Porchs
-            {
-                get { return porchCount; }
-                set { porchCount = value; }
-            }
-            /// <summary>
-            /// этажей
-            /// </summary>
-            public int Floors
-            {
-                get { return floorCount; }
-                set { floorCount = value; }
-            }
-            /// <summary>
-            /// комнат на этаже
-            /// </summary>
-            public int RoomsOnFloor
-            {
-                get { return roomsOnFloor; }
-                set { roomsOnFloor = value; }
-            }
-
-            public double Number
-            {
-                get { return numberHouse; }
-                set { numberHouse = value; }
-            }
-
-            //Конструкторы
-            public House()
-            {
-            }
-
             public House(int porchCount, int floorCount, int roomsOnFloor, double numberHouse)
             {
                 _porchCount = porchCount;
@@ -74,16 +36,56 @@ namespace DZ_3._1
                 _roomsOnFloor = roomsOnFloor;
                 _numberHouse = numberHouse;
             }
+
+            //Свойства
+
+            /// <summary>
+            /// подъезд
+            /// </summary>
+            public int Porchs
+            {
+                get { return _porchCount; }
+                set { _porchCount = value; }
+            }
+            /// <summary>
+            /// этажей
+            /// </summary>
+            public int Floors
+            {
+                get { return _floorCount; }
+                set { _floorCount = value; }
+            }
+            /// <summary>
+            /// комнат на этаже
+            /// </summary>
+            public int RoomsOnFloor
+            {
+                get { return _roomsOnFloor; }
+                set { _roomsOnFloor = value; }
+            }
+
+            public double Number
+            {
+                get { return _numberHouse; }
+                set { _numberHouse = value; }
+            }
+
+            //Конструкторы
+            public House()
+            {
+            }
+
+           
             //Методы
 
             public int GetRoomsCountInPorch()
             {
-                return roomsOnFloor * floorCount;
+                return _roomsOnFloor * _floorCount;
             }
 
             public int GetRoomsCountInHouse()
             {
-                return GetRoomsCountInPorch() * porchCount;
+                return GetRoomsCountInPorch() * _porchCount;
             }
 
             public double HouseCost()
