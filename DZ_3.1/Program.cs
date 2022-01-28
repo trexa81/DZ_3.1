@@ -24,12 +24,23 @@ namespace DZ_3._1
         class House
         {
             //Поля
-            private int _porchCount;
-            private int _floorCount;
-            private int _roomsOnFloor;
-            private double _numberHouse;
 
-            public House(int porchCount, int floorCount, int roomsOnFloor, double numberHouse)
+            /// <summary>
+            /// подъездов
+            /// </summary>
+            private int _porchCount;
+            /// <summary>
+            /// этажей
+            /// </summary>
+            private int _floorCount;
+            /// <summary>
+            /// квартир
+            /// </summary>
+            private int _roomsOnFloor;
+            private int _numberHouse;
+            
+            //Конструкторы
+            public House(int porchCount, int floorCount, int roomsOnFloor, int numberHouse)
             {
                 _porchCount = porchCount;
                 _floorCount = floorCount;
@@ -48,7 +59,7 @@ namespace DZ_3._1
                 set { _porchCount = value; }
             }
             /// <summary>
-            /// этажей
+            /// количество этажей
             /// </summary>
             public int Floors
             {
@@ -64,39 +75,47 @@ namespace DZ_3._1
                 set { _roomsOnFloor = value; }
             }
 
-            public double Number
+            public int HouseNumber
             {
                 get { return _numberHouse; }
                 set { _numberHouse = value; }
             }
 
-            //Конструкторы
-            public House()
-            {
-            }
-
-           
+                                   
             //Методы
 
+            /// <summary>
+            /// квартир в подъезде
+            /// </summary>
+            /// <returns></returns>
             public int GetRoomsCountInPorch()
             {
                 return _roomsOnFloor * _floorCount;
             }
 
+            /// <summary>
+            /// квартир в доме
+            /// </summary>
+            /// <returns></returns>
             public int GetRoomsCountInHouse()
             {
                 return GetRoomsCountInPorch() * _porchCount;
             }
 
+            /// <summary>
+            /// стоимость дома
+            /// </summary>
+            /// <returns></returns>
             public double HouseCost()
             {
-                return (double)GetRoomsCountInHouse() * Number;
+                return (double)GetRoomsCountInHouse() * 100000;
             }
 
             // уникальный номер здания, высота, этажность, количество квартир, подъездов
             public override string ToString()
             {
-                return string.Format("Номер здания: {2} \n Количество этажей: {0} \n Количество подъездов: {1} \n Количество квартир: {3}\n", Floors, Porchs, Number, RoomsOnFloor);/**/
+                return string.Format("Номер здания: {2} \n Количество этажей: {0} \n Количество подъездов: {1} \n Количество квартир: {3}\n",
+                    Floors, Porchs, HouseNumber, RoomsOnFloor);
             }
         }
     }
