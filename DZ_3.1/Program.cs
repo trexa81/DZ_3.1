@@ -6,13 +6,16 @@ namespace DZ_3._1
     {
         static void Main(string[] args)
         {
+            int number = 1;
+            int numberHouse = number++;
             House[] houses = new House[]
            {
-                new House(3, 5, 4/*, 1000*/),
-                new House(4, 9, 5/*, 2000*/),
-                new House(5, 3, 2/*, 700*/),
-                new House(1, 2, 3/*, 500*/),
-                new House(6, 9, 5/*, 2500*/),
+               
+                new House(3, 5, 4, numberHouse/*, 1000*/),
+                new House(4, 9, 5, numberHouse/*, 2000*/),
+                new House(5, 3, 2, numberHouse/*, 700*/),
+                new House(1, 2, 3, numberHouse/*, 500*/),
+                new House(6, 9, 5, numberHouse/*, 2500*/),
            };
 
             foreach (House house in houses)
@@ -40,7 +43,7 @@ namespace DZ_3._1
             private int _numberHouse = 1;
             
             //Конструкторы
-            public House(int porchCount, int floorCount, int roomsOnFloor/*, int numberHouse*/)
+            public House(int porchCount, int floorCount, int roomsOnFloor, int numberHouse)
             {
                 _porchCount = porchCount;
                 _floorCount = floorCount;
@@ -77,7 +80,7 @@ namespace DZ_3._1
 
             public int HouseNumber
             {
-                get { return ++_numberHouse; }
+                get { return _numberHouse++; }
                 set { _numberHouse = value; }
             }
 
