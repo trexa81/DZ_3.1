@@ -85,7 +85,7 @@ namespace DZ_3._1
 
             public override string ToString()
             {
-                return string.Format("Номер здания: {2} \n Количество этажей: {0} \n Количество подъездов: {1} ", Floors, Porchs, Cost);/*{3}*/
+                return string.Format("Номер здания: {2} \n Количество этажей: {0} \n Количество подъездов: {1} \n {3}", Floors, Porchs, Cost, RoomsOnFloor);/**/
             }
         }
     }
