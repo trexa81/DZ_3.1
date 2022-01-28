@@ -9,13 +9,13 @@ namespace DZ_3._1
             RationalNumber rn = new(5, 10);
             Console.WriteLine("{0}/{1}", rn.Numerator, rn.Denominator);
 
-            RationalNumber r1 = new RationalNumber(3, 5);
-            RationalNumber r2 = new RationalNumber(4, 7);
+            RationalNumber r1 = new(4, 5);
+            RationalNumber r2 = new(4, 7);
 
-            RationalNumber add = r1 + r2;   // add = 41/35
-            RationalNumber sub = r1 - r2;   // sub = 1/35
-            RationalNumber mul = r1 * r2;   // mul = 12/35
-            RationalNumber div = r1 / r2;   // div = 21/20
+            RationalNumber add = r1 + r2;   
+            RationalNumber sub = r1 - r2; 
+            RationalNumber mul = r1 * r2; 
+            RationalNumber div = r1 / r2; 
             Console.WriteLine("{0}/{1}", add.Numerator, add.Denominator);
             Console.WriteLine("{0}/{1}", sub.Numerator, sub.Denominator);
             Console.WriteLine("{0}/{1}", mul.Numerator, mul.Denominator);
@@ -23,7 +23,7 @@ namespace DZ_3._1
 
         }
 
-        struct RationalNumber
+        private struct RationalNumber
         {
             /// <summary>
             /// числитель
@@ -106,7 +106,15 @@ namespace DZ_3._1
                 return new RationalNumber(r1.Numerator * r2.Denominator, r1.Denominator * r2.Numerator);
             }
 
+            public static RationalNumber operator ++(RationalNumber r1)
+            {
+                return new RationalNumber(r1.Numerator + r1.Denominator, r1.Denominator);
+            }
 
+            public static RationalNumber operator --(RationalNumber r1)
+            {
+                return new RationalNumber((r1.Numerator - r1.Denominator), r1.Denominator);
+            }
         }
     }
 }
