@@ -67,17 +67,17 @@ namespace DZ_3._1
                 set { _floorCount = value; }
             }
             /// <summary>
-            /// квартир на этаже
+            /// квартир в доме
             /// </summary>
             public int RoomsOnFloor
             {
-                get { return _roomsOnFloor; }
+                get { return GetRoomsCountInHouse(); }
                 set { _roomsOnFloor = value; }
             }
 
             public int HouseNumber
             {
-                get { return _numberHouse++; }
+                get { return ++_numberHouse; }
                 set { _numberHouse = value; }
             }
 
