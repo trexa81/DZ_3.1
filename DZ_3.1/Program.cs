@@ -24,10 +24,10 @@ namespace DZ_3._1
         class House
         {
             //Поля
-            private int porchCount;
-            private int floorCount;
-            private int roomsOnFloor;
-            private double numberHouse;
+            private int _porchCount;
+            private int _floorCount;
+            private int _roomsOnFloor;
+            private double _numberHouse;
 
             //Свойства
 
@@ -67,12 +67,12 @@ namespace DZ_3._1
             {
             }
 
-            public House(int porchCount, int floorCount, int roomsOnFloor, double cost)
+            public House(int porchCount, int floorCount, int roomsOnFloor, double numberHouse)
             {
-                this.porchCount = porchCount;
-                this.floorCount = floorCount;
-                this.roomsOnFloor = roomsOnFloor;
-                this.numberHouse = cost;
+                _porchCount = porchCount;
+                _floorCount = floorCount;
+                _roomsOnFloor = roomsOnFloor;
+                _numberHouse = numberHouse;
             }
             //Методы
 
