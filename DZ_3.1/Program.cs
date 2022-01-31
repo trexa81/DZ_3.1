@@ -10,20 +10,21 @@ namespace DZ_3._1
             Console.WriteLine("{0}/{1}", rn.Numerator, rn.Denominator);
 
             RationalNumber r1 = new(4, 5);
-            RationalNumber r2 = new(4, 7);
-
-            RationalNumber add = r1 + r2;   
-            RationalNumber sub = r1 - r2; 
+            RationalNumber r2 = new(4, -7);
+            var rNext1 = r1;
+            var rNext2 = r2;
+            RationalNumber add = ++rNext1;   
+            RationalNumber sub = --rNext2; 
             RationalNumber mul = r1 * r2; 
             RationalNumber div = r1 / r2; 
-            Console.WriteLine("{0}/{1}", add.Numerator, add.Denominator);
-            Console.WriteLine("{0}/{1}", sub.Numerator, sub.Denominator);
-            Console.WriteLine("{0}/{1}", mul.Numerator, mul.Denominator);
-            Console.WriteLine("{0}/{1}", div.Numerator, div.Denominator);
-
+            
+            Console.WriteLine(add.ToString());
+            Console.WriteLine(sub.ToString());
+            Console.WriteLine(mul.ToString());
+            Console.WriteLine(div.ToString());
         }
 
-        private struct RationalNumber
+        private class RationalNumber
         {
             /// <summary>
             /// числитель
@@ -79,8 +80,13 @@ namespace DZ_3._1
             {
                 if (term2 == 0)
                     return term1;
-                else
-                    return GetGCD(term2, term1 % term2);
+                if (term2 < 0)
+                {
+                    term1 *= (-1);
+                    term2 *= (-1);
+                }
+
+                return GetGCD(term2, term1 % term2);
             }
 
             public static RationalNumber operator +(RationalNumber r1, RationalNumber r2)
@@ -111,10 +117,34 @@ namespace DZ_3._1
                 return new RationalNumber(r1.Numerator + r1.Denominator, r1.Denominator);
             }
 
-            public static RationalNumber operator --(RationalNumber r1)
+            public static RationalNumber operator --(RationalNumber r2)
             {
-                return new RationalNumber((r1.Numerator - r1.Denominator), r1.Denominator);
+                var R = r2.Numerator;
+                var F = r2.Denominator;
+                var D = R - F;
+                return new RationalNumber(D,F);
             }
+
+            public bool Equals(RationalNumber other)
+            {
+                return Numerator.Equals(other.Numerator)
+                       && Denominator.Equals(other.Denominator);
+            }
+
+            public override bool Equals(object? obj)
+            {
+                if (obj is RationalNumber other_vector)
+                    return Numerator == other_vector.Numerator && Denominator == other_vector.Denominator;
+
+                return false;
+            }
+
+            public override string ToString() => $"{Numerator}/{Denominator}";
+
+            //public static RationalNumber bool operator ==(RationalNumber r1, RationalNumber r2)
+            //{
+            //    return r1.Equals(r2);
+            //}
         }
     }
 }
